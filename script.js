@@ -141,7 +141,7 @@ let
             "Lisa", "Jessica", "Tanya", "Zhanna", "Marina", "Yevgen"],
     pscore = 0, oppscore = 0, cardsValues = new Array(), opp, flag
     min = Math.ceil(0),
-    max = Math.floor(100),
+    max = Math.floor(100.5),
     cards = [document.querySelector("#card1"),
              document.querySelector("#card2"),
              document.querySelector("#card3")];
@@ -223,6 +223,7 @@ function take(i){
                 else{
                     chooser.innerHTML = "<a>CLICK to try again!</a>";
                     winnername.innerHTML = Winner(pscore, oppscore);
+                    winnerplace.style.border = "0.3vw ridge gold";
                     flag = true;
                 }
                 chooser.classList.add('pointed');
@@ -243,13 +244,15 @@ chooser.addEventListener('click', ()=>{
     chooser.innerHTML = 'Choose the card';
     chooser.classList.remove('pointed');
     if (flag){
-        winnerplace.innerHTML = null;
+        winnername.innerHTML = ". . .";
         pscore = 0;
         oppscore = 0;
-        pscore.innerHTML = pscore;
-        oppscore.innerHTML = oppscore;
+        playerscorefield.innerHTML = pscore;
+        opponentscorefield.innerHTML = oppscore;
+        winnerplace.style.border = "0.3vw ridge";
         opp = opps.at(Math.floor(Math.random() * (opps.length - 0)) + 0);
         opponentname.innerHTML = opp;
+        flag = false;
     }
     cards.forEach(element => {
         element.animate(keyFlip,{
@@ -272,5 +275,5 @@ chooser.addEventListener('click', ()=>{
         cards.forEach(element => {
             element.removeAttribute('disabled');
         });
-    }, 2500)
+    }, 2200);
 })

@@ -70,14 +70,16 @@ body{
     border-radius: 100%;
     color: whitesmoke;
     border-top: 0px;
+    transition: 0.3s;
 }
-.menu  button:disabled{
+.menu button:disabled{
     color: rgba(255, 255, 255, 0.5);
 }
-.menu  button:hover{
+.menu button:hover{
     cursor: crosshair;
+    transition: 0.3s;
 }
-.menu  button:hover:disabled{
+.menu button:hover:disabled{
     box-shadow: 0px 0px 0px rgb(0, 0, 0);
     cursor:no-drop;
 }
@@ -148,7 +150,7 @@ body{
         transform: translate(-50%, -500%);
     }
     80%{
-        transform: translate(-50%, 100%);
+        transform: translate(-50%, 30%);
     }
     100%{
         transform: translate(-50%, 0);
@@ -276,6 +278,7 @@ body{
     font-size: 5vw;
     margin: 0px auto;
     color: white;
+    transition: 1s;
 }
 .card{
     height: 90%;
@@ -287,16 +290,21 @@ body{
     justify-content: space-evenly;
     align-items: center;
     font-family: 'Fruktur';
-    font-size: 10vw;
+    font-size: 12vw;
     background: rgba(255, 0, 0, 0.199);
 }
 .card:hover{
     background: rgba(255, 217, 0, 0.384);
     transition: 0.5s;
+    cursor: grab;
 }
 .card:active{
     background: rgba(102, 255, 0, 0.466);
     transition: 0.2s;
+    cursor: grabbing;
+}
+.card:disabled{
+    cursor: auto;
 }
 .green{
     background: rgba(0, 255, 0, 0.521);
@@ -331,6 +339,7 @@ body{
 .winnerplace{
     display: flex;
     flex-direction: column;
+    transition: 1s;
 }
 .winlabel{
     display: flex;
