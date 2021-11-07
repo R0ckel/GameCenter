@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="UK">
+	<head>
+        <meta charset="utf-8">
+		<title>Game Center</title> 
+		<link rel="shortcut icon" href = "favicon.ico">
+        <link rel="stylesheet" href="style.css">
+	</head> 
+	<body>
+		<button class="backButton" id = "backButton" style = "display: none;">
+			← Back to Menu
+		</button>
+		<!-- Main Menu -->
+		<div class="Main" id = "Main">
+			<div class="greeting">Welcome to Rockel`s Game Center</div>
+			<div class="menu">
+				<span class = "menutext">Choose the game!</span>
+				<div class="buttonBlock"><button class = "MBbutton" id = "MagicBallButton">
+					Magic Ball
+				</button></div>
+				<div class="buttonBlock"><button class = "PBbutton" id = "PointBattleButton">
+					Point Battle
+				</button></div>
+				<div class="buttonBlock"><button disabled id = "disabledButton">
+					Survivor
+				</button></div>
+				<span class = "info">(Work in progress)</span>
+				<span class = "copyright">© Made by Roman Koshovyi. All right reserved.</span>
+			</div>
+		</div>
+		<!-- Magic Ball Game -->
+		<div class = "MagicBall" id = "MagicBall">
+			<form class = 'ballForm' id = 'ballForm'> 
+				<div>
+					Input your question here and shake the magic ball!
+				</div> 
+				<input type= 'text' name='quest' size='10' id = 'forQuest' placeholder='Question' autocomplete="off">
+				<label for="deleteCheck">
+					<input id = "deleteCheck" type = "checkbox" value = "delete">Delete question after answer
+				</label>
+			</form>
+			<div class = 'block' id = 'block'>
+				<img src = 'Gallery\ballpic.png' class = 'ballPic'>
+				<button class = 'button' onClick=rand() id = 'asker'>Gimme question and I`ll answer U!</button>
+			</div>
+		</div>
+		<!-- Point Game -->
+		<div class="PointBattle" id = "PointBattle">
+			<div class="rules" id = "rules">
+				There are three cards with random number of point in there (from 1 to 100). You can choose one card and after that your opponent will choose another. There will be few rounds. Winner is who first got 250 points. Good luck!
+			</div>
+			<div class="gamefield">
+				<div class="scoreboard">
+					<div class="playerscore" id = "playerscore">
+						<div id = "playerscorefield">0</div>
+						<div class="ghost" id = "pghost">1</div>
+					</div>
+					<span id = "playername">You</span>
+					<div class="winnerplace" id = "winnerplace">
+						<div class="winlabel">
+							Winner
+						</div>
+						<span id = "winnername" class = "winnername">
+							. . .
+						</span>
+					</div>
+					<span id = "opponentname">Opp</span>
+					<div class="opponentscore" id = "opponentscore">
+						<div id = "opponentscorefield">0</div>
+						<div class="ghost" id = "oppghost">1</div>
+					</div>
+				</div>
+				<span class = "chooser" id = "chooser">Choose the card</span>
+				<div class="cards">
+					<input type = "button" class="card" id="card1" value = "?">
+					<input type = "button" class="card" id="card2" value = "?">
+					<input type = "button" class="card" id="card3" value = "?">
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+ </html>
