@@ -8,7 +8,6 @@ html, body{
     overflow: hidden;
 }
 body{
-    background: radial-gradient(#ff2020, #000000);
     background: fixed url("Gallery\\gamingBackgroundBlue.jpg") center/cover;
 }
 
@@ -286,8 +285,10 @@ body{
     transition: 1s;
 }
 .card{
-    height: 90%;
-    width: 25%;
+    height: 40vw;
+    max-height: 55vh;
+    max-width: 35vh;
+    width: 25vw;
     border: 0.5vw solid cornflowerblue;
     color: white;
     border-radius: 2vw;
@@ -427,7 +428,7 @@ body{
     background-color: slategrey;
 }
 .cardghost{
-    color: rgb(165, 80, 0)
+    color: rgb(0, 2, 97)
 }
 
 .takerBlock{

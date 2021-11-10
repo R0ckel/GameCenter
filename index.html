@@ -1,124 +1,124 @@
 <!DOCTYPE html>
 <html lang="UK">
-	<head>
+    <head>
         <meta charset="utf-8">
-		<title>Game Center</title> 
-		<link rel="shortcut icon" href = "favicon.ico">
+        <title>Game Center</title> 
+        <link rel="shortcut icon" href = "favicon.ico">
         <link rel="stylesheet" href="style.css">
-	</head> 
-	<body onLoad = "prompter()">
-		<button class="backButton" id = "backButton" style = "display: none;">
-			← Back to Menu
-		</button>
-		<!-- Main Menu -->
-		<div class="Main" id = "Main">
-			<div class="greeting">Welcome to Rockel`s Game Center</div>
-			<div class="menu">
-				<span class = "menutext">Choose the game!</span>
-				<div class="buttonBlock"><button class = "MBbutton" id = "MagicBallButton">
-					Magic Ball
-				</button></div>
-				<div class="buttonBlock"><button class = "PBbutton" id = "PointBattleButton">
-					Point Battle
-				</button></div>
-				<div class="buttonBlock"><button class = "CBbutton" id = "CardBattleButton">
-					Card Battle
-				</button></div>
-				<div class="buttonBlock"><button disabled id = "disabledButton">
-					Survivor
-				</button></div>
-				<span class = "info">(Work in progress)</span>
-				<span class = "copyright">© Made by Roman Koshovyi. All right reserved.</span>
-			</div>
-		</div>
-		<!-- Magic Ball -->
-		<div class = "MagicBall" id = "MagicBall">
-			<form class = 'ballForm' id = 'ballForm'> 
-				<div>
-					Input your question here and shake the magic ball!
-				</div> 
-				<input type= 'text' name='quest' size='10' id = 'forQuest' placeholder='Question' autocomplete="off">
-				<label for="deleteCheck">
-					<input id = "deleteCheck" type = "checkbox" value = "delete">Delete question after answer
-				</label>
-			</form>
-			<div class = 'block' id = 'block'>
-				<img src = 'Gallery/ballpic.png' class = 'ballPic' alt = "Magic ball picture">
-				<button class = 'button' onClick=rand() id = 'asker'>Gimme question and I`ll answer U!</button>
-			</div>
-		</div>
-		<!-- Point Battle -->
-		<div class="PointBattle" id = "PointBattle">
-			<div class="rules" id = "pointrules">
-				There are three cards with random number of point in there (from 0 to 100). You can choose one card and after that your opponent will choose another. There will be few rounds. Winner is who first got 250 points. Good luck!
-			</div>
-			<div class="gamefield">
-				<div class="scoreboard">
-					<div class="playerscore" id = "pointplayerscore">
-						<div id = "pointplayerscorefield">0</div>
-						<div class="ghost" id = "pointpghost">1</div>
-					</div>
-					<span id = "pointplayername" class = 'playername'>You</span>
-					<div class="winnerplace" id = "pointwinnerplace">
-						<div class="winlabel">
-							Winner
-						</div>
-						<span id = "pointwinnername" class = "winnername">
-							. . .
-						</span>
-					</div>
-					<span id = "pointopponentname">Opp</span>
-					<div class="opponentscore" id = "pointopponentscore">
-						<div id = "pointopponentscorefield">0</div>
-						<div class="ghost" id = "pointoppghost">1</div>
-					</div>
-				</div>
-				<span class = "chooser" id = "pointchooser">Choose the card</span>
-				<div class="cards">
-					<input type = "button" class="card pointcard" id="pointcard1" value = "?">
-					<input type = "button" class="card pointcard" id="pointcard2" value = "?">
-					<input type = "button" class="card pointcard" id="pointcard3" value = "?">
-				</div>
-			</div>
-		</div>
-		<!-- Card Battle -->
-		<div class="CardBattle" id = "CardBattle">
-			<div class="rules" id = "cardrules">
-				Click "Take a card" to turn over the cards. Left one is yours. Right one - card of your opponent. There will be 3 generatings - who will have more points - wins! 
-			</div>
-			<div class="orange gamefield cardgamefield">
-				<div class="scoreboard">
-					<div class="playerscore" id = "cardplayerscore">
-						<div id = "cardplayerscorefield">0</div>
-						<div class="ghost cardghost" id = "cardpghost">0</div>
-					</div>
-					<span id = "cardplayername">You</span>
-					<div class="winnerplace" id = "cardwinnerplace">
-						<div class="winlabel">
-							Winner
-						</div>
-						<span id = "cardwinnername" class = "winnername">
-							. . .
-						</span>
-					</div>
-					<span id = "cardopponentname">Opp</span>
-					<div class="opponentscore" id = "opponentscore">
-						<div id = "cardopponentscorefield">0</div>
-						<div class="ghost cardghost" id = "cardoppghost">0</div>
-					</div>
-				</div>
-				<div class="cards">
-					<input id = "card1" type="image" class = "card" src="Gallery\Cards\cardback.png" alt="Кнопка «input»">
-					<div class="takerBlock">
-						<div class="roundCount" id = "roundCount">Round: 1</div>
-						<div class="TakeCardbuttonBlock"><button class = "TakeCardButton" id = "TakeCardButton">
-							Take a card
-						</button></div>
-					</div>
-					<input id = "card2" type="image" class = "card" src="Gallery\Cards\cardback.png" alt="Кнопка «input»">
-				</div>
-			</div>
-		</div>
-		<script src="script.js"></script>
-	</body>
+    </head> 
+    <body onLoad = "prompter()">
+        <button class="backButton" id = "backButton" style = "display: none;">
+            ← Back to Menu
+        </button>
+        <!-- Main Menu -->
+        <div class="Main" id = "Main">
+            <div class="greeting">Welcome to Rockel`s Game Center</div>
+            <div class="menu">
+                <span class = "menutext">Choose the game!</span>
+                <div class="buttonBlock"><button class = "MBbutton" id = "MagicBallButton">
+                    Magic Ball
+                </button></div>
+                <div class="buttonBlock"><button class = "PBbutton" id = "PointBattleButton">
+                    Point Battle
+                </button></div>
+                <div class="buttonBlock"><button class = "CBbutton" id = "CardBattleButton">
+                    Card Battle
+                </button></div>
+                <div class="buttonBlock"><button disabled id = "disabledButton">
+                    Survivor
+                </button></div>
+                <span class = "info">(Work in progress)</span>
+                <span class = "copyright">© Made by Roman Koshovyi. All right reserved.</span>
+            </div>
+        </div>
+        <!-- Magic Ball -->
+        <div class = "MagicBall" id = "MagicBall">
+            <form class = 'ballForm' id = 'ballForm'> 
+                <div>
+                    Input your question here and shake the magic ball!
+                </div> 
+                <input type= 'text' name='quest' size='10' id = 'forQuest' placeholder='Question' autocomplete="off">
+                <label for="deleteCheck">
+                    <input id = "deleteCheck" type = "checkbox" value = "delete">Delete question after answer
+                </label>
+            </form>
+            <div class = 'block' id = 'block'>
+                <img src = 'Gallery/ballpic.png' class = 'ballPic' alt = "Magic ball picture">
+                <button class = 'button' onClick=rand() id = 'asker'>Gimme question and I`ll answer U!</button>
+            </div>
+        </div>
+        <!-- Point Battle -->
+        <div class="PointBattle" id = "PointBattle">
+            <div class="rules" id = "pointrules">
+                There are three cards with random number of point in there (from 0 to 100). You can choose one card and after that your opponent will choose another. There will be few rounds. Winner is who first got 250 points. Good luck!
+            </div>
+            <div class="gamefield">
+                <div class="scoreboard">
+                    <div class="playerscore" id = "pointplayerscore">
+                        <div id = "pointplayerscorefield">0</div>
+                        <div class="ghost" id = "pointpghost">1</div>
+                    </div>
+                    <span id = "pointplayername" class = 'playername playername-flexible'>Player</span>
+                    <div class="winnerplace" id = "pointwinnerplace">
+                        <div class="winlabel">
+                            Winner
+                        </div>
+                        <span id = "pointwinnername" class = "winnername">
+                            . . .
+                        </span>
+                    </div>
+                    <span id = "pointopponentname">Opp</span>
+                    <div class="opponentscore" id = "pointopponentscore">
+                        <div id = "pointopponentscorefield">0</div>
+                        <div class="ghost" id = "pointoppghost">1</div>
+                    </div>
+                </div>
+                <span class = "chooser" id = "pointchooser">Choose the card</span>
+                <div class="cards">
+                    <input type = "button" class="card pointcard" id="pointcard1" value = "?">
+                    <input type = "button" class="card pointcard" id="pointcard2" value = "?">
+                    <input type = "button" class="card pointcard" id="pointcard3" value = "?">
+                </div>
+            </div>
+        </div>
+        <!-- Card Battle -->
+        <div class="CardBattle" id = "CardBattle">
+            <div class="rules" id = "cardrules">
+                Click "Take a card" to turn over the cards. Left one is yours. Right one - card of your opponent. There will be 3 generatings - who will have more points - wins! 
+            </div>
+            <div class="orange gamefield cardgamefield">
+                <div class="scoreboard">
+                    <div class="playerscore" id = "cardplayerscore">
+                        <div id = "cardplayerscorefield">0</div>
+                        <div class="ghost cardghost" id = "cardpghost">0</div>
+                    </div>
+                    <span id = "cardplayername" class = "playername-flexible">Player</span>
+                    <div class="winnerplace" id = "cardwinnerplace">
+                        <div class="winlabel">
+                            Winner
+                        </div>
+                        <span id = "cardwinnername" class = "winnername">
+                            . . .
+                        </span>
+                    </div>
+                    <span id = "cardopponentname">Opp</span>
+                    <div class="opponentscore" id = "opponentscore">
+                        <div id = "cardopponentscorefield">0</div>
+                        <div class="ghost cardghost" id = "cardoppghost">0</div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <input id = "card1" type="image" class = "card" src="Gallery\Cards\cardback.png" alt="Кнопка «input»">
+                    <div class="takerBlock">
+                        <div class="roundCount" id = "roundCount">Round: 1</div>
+                        <div class="TakeCardbuttonBlock"><button class = "TakeCardButton" id = "TakeCardButton">
+                            Take a card
+                        </button></div>
+                    </div>
+                    <input id = "card2" type="image" class = "card" src="Gallery\Cards\cardback.png" alt="Кнопка «input»">
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
  </html>

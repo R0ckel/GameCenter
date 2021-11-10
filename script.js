@@ -44,9 +44,34 @@ let
     animationStep = 500;
 
 function prompter(){
-    setTimeout(()=>{
-        playername = prompt("Please, enter your nickname:", "Player");
-    }, 0.5 * animationStep);
+   setTimeout(()=>{
+      while(true){
+            playername = prompt("Please, enter your nickname:", "Player");
+            if (playername === null){
+               playername = "Player";
+               alert("Name was automatically changed to 'Player'!");
+               break;
+            }
+            else if (playername.length < 3){
+               alert("Your nickname is too short! Enter again!");
+            }
+            else if (playername.length > 20){
+               alert("Your nickname is too long! Enter again!");
+            }
+            else{
+               playerNameSizeChanger();
+               break;
+            }
+      };
+   }, 0.5 * animationStep);
+}
+
+function playerNameSizeChanger(){
+      let playernameLabels = document.querySelectorAll(".playername-flexible");
+      let fontSizeForLabels = 30/playername.length;
+      playernameLabels.forEach(element=>{
+         element.style.fontSize = ((fontSizeForLabels > 7)? 7 : fontSizeForLabels) + 'vw';
+      })
 }
 
 function nameCheck(){
