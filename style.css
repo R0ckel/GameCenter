@@ -296,13 +296,19 @@ body{
     align-items: center;
     background: rgba(255, 0, 0, 0.199);
 }
+.card:hover{
+    cursor: default;
+}
+.card:disabled{
+    cursor: auto;
+}
 .pointcard{
     background: rgba(255, 217, 0, 0.384);
     font-family: 'Fruktur';
     font-size: 12vw;
 }
 .pointcard:hover{
-    background: rgba(255, 217, 0, 0.384);
+    background: rgba(255, 217, 0, 0.548);
     cursor: grab;
     transition: 0.5s;
 }
@@ -310,9 +316,6 @@ body{
     transition: 0.2s;
     cursor: grabbing;
     background: rgba(102, 255, 0, 0.466);
-}
-.card:disabled{
-    cursor: auto;
 }
 .green{
     background: rgba(0, 255, 0, 0.521);
@@ -418,9 +421,6 @@ body{
 }
 .TakeCardButton:disabled{
     cursor: no-drop;
-}
-.card:hover{
-    cursor: default;
 }
 .TakeCardButton:disabled{
     animation: none;

@@ -245,10 +245,10 @@ function take(i){
                 pointoppghost.innerHTML = '+' + pointcardsValues.at(temp);
                 pointoppghost.style.display = 'flex';
                 pointpghost.animate(keyGhost,{
-                    duration: 3 * animationStep
+                    duration: 6 * animationStep
                 })
                 pointoppghost.animate(keyGhost,{
-                    duration: 3 * animationStep
+                    duration: 6 * animationStep
                 })
             }, 10 * animationStep)
             setTimeout(()=>{
@@ -390,7 +390,6 @@ function TakeCard(){
         else {
             TakeCardButton.innerHTML = "Next card";
         }
-        console.log(taked + ' - ' + isFinished + ' - ' + cardRoundCount);
     }, 12 * animationStep)
 }
 
@@ -422,7 +421,6 @@ function CardReset(){
         TakeCardButton.removeAttribute('disabled');
         roundCount.innerHTML = "Round: " + cardRoundCount;
         taked = false;
-        console.log(taked + ' - ' + isFinished + ' - ' + cardRoundCount);
     }, 4 * animationStep)
 }
 

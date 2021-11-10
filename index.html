@@ -6,7 +6,7 @@
 		<link rel="shortcut icon" href = "favicon.ico">
         <link rel="stylesheet" href="style.css">
 	</head> 
-	<body><!--onLoad = "prompter()"-->
+	<body onLoad = "prompter()">
 		<button class="backButton" id = "backButton" style = "display: none;">
 			← Back to Menu
 		</button>
@@ -69,15 +69,15 @@
 					</div>
 					<span id = "pointopponentname">Opp</span>
 					<div class="opponentscore" id = "pointopponentscore">
-						<div id = "opponentscorefield">0</div>
+						<div id = "pointopponentscorefield">0</div>
 						<div class="ghost" id = "pointoppghost">1</div>
 					</div>
 				</div>
 				<span class = "chooser" id = "pointchooser">Choose the card</span>
 				<div class="cards">
-					<input type = "button" class="pointcard card" id="pointcard1" value = "?">
-					<input type = "button" class="pointcard card" id="pointcard2" value = "?">
-					<input type = "button" class="pointcard card" id="pointcard3" value = "?">
+					<input type = "button" class="card pointcard" id="pointcard1" value = "?">
+					<input type = "button" class="card pointcard" id="pointcard2" value = "?">
+					<input type = "button" class="card pointcard" id="pointcard3" value = "?">
 				</div>
 			</div>
 		</div>
