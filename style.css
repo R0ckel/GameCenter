@@ -2,6 +2,7 @@
 html, body{
     margin: 0%;
     transition: 2s;
+    transition-delay: 0.4s;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
     overflow: hidden;
@@ -11,7 +12,7 @@ body{
     background: fixed url("Gallery\\gamingBackgroundBlue.jpg") center/cover;
 }
 
-.MagicBall, .PointBattle{
+.MagicBall, .PointBattle, .CardBattle{
     display: none;
 }
 
@@ -40,6 +41,7 @@ body{
     margin: 18vh 30vw;
     width: 40vw;
     height: 80vw;
+    min-height: 60vh;
     max-height: 70vh;
 }
 .info{
@@ -55,7 +57,7 @@ body{
     text-align: center;
 }
 .buttonBlock{
-    height: 22%;
+    height: 16%;
     width: 100%;
     margin: 0px auto;
     display: flex;
@@ -65,8 +67,8 @@ body{
     font-family: 'Ceviche One', cursive;
     font-size: 3.5vw;
     width: 80%;
-    margin: 3vh;
-    height: 6vw;
+    margin: 2vh;
+    height: 5vw;
     border-radius: 100%;
     color: whitesmoke;
     border-top: 0px;
@@ -95,6 +97,12 @@ body{
 .PBbutton:hover{
     box-shadow: 0px 0px 50px #2bff008f;
 }
+.CBbutton{
+    background: linear-gradient(#ffffff00, #b900008f);
+}
+.CBbutton:hover{
+    box-shadow: 0px 0px 50px #ff00008f;
+}
 
 .copyright{
     position: absolute;
@@ -104,7 +112,6 @@ body{
     width: 100%;
     color: rgb(255, 170, 43);
     text-align: center;
-    align-self: bottom;
 }
 
 .backButton{
@@ -174,7 +181,6 @@ body{
     border-radius: 10px;
 }
 .ballForm label{
-    word-wrap: nowrap;
     font-size: 20px;
     color: rgba(129, 255, 129, 0.664);
 }
@@ -183,7 +189,6 @@ body{
     transform: scale(1.7);
     width: auto;
     height: auto;
-    word-wrap: nowrap;
 }
 
 .block{
@@ -217,7 +222,7 @@ body{
 .ballPic{
     width: auto;
     height: 100%;
-    box-shadow: 0,0,10,white;
+    box-shadow: 0px, 0px, 10px, white;
 }
 
 .rules{
@@ -289,19 +294,22 @@ body{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    font-family: 'Fruktur';
-    font-size: 12vw;
     background: rgba(255, 0, 0, 0.199);
 }
-.card:hover{
+.pointcard{
     background: rgba(255, 217, 0, 0.384);
-    transition: 0.5s;
-    cursor: grab;
+    font-family: 'Fruktur';
+    font-size: 12vw;
 }
-.card:active{
-    background: rgba(102, 255, 0, 0.466);
+.pointcard:hover{
+    background: rgba(255, 217, 0, 0.384);
+    cursor: grab;
+    transition: 0.5s;
+}
+.pointcard:active{
     transition: 0.2s;
     cursor: grabbing;
+    background: rgba(102, 255, 0, 0.466);
 }
 .card:disabled{
     cursor: auto;
@@ -322,6 +330,11 @@ body{
     background: rgba(4, 0, 255, 0.521);
     transition: 1s;
 }
+.orange{
+    background: rgba(0, 217, 255, 0.301);
+    transition: 1s;
+}
+
 .pointed{
     cursor: pointer;
     color :rgb(251, 255, 0);
@@ -362,6 +375,94 @@ body{
     color: white;
     position: absolute;
     display: none;
+}
+.cardgamefield{
+    height: 73vh;
+    top: 15vh;
+}
+.cardchooser{
+    font-family: 'Ceviche One', cursive;
+    font-size: 5vw;
+    color: white;
+    transition: 1s;
+}
+.TakeCardbuttonBlock{
+    height: 116%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.TakeCardButton{
+    background-color: rgba(0, 114, 51, 0.678);
+    height: 100%;
+    width: 25vw;
+    padding: 1vw;
+    font-family: 'Ceviche One', cursive;
+    font-size: 4vw;
+    color:rgb(255, 255, 255);
+    border: 0.5vw double rgb(255, 238, 0);
+    border-radius: 5vw;
+    animation: pulse-yellow 2s linear 0s infinite;
+    transition: 0.3s;
+}
+.TakeCardButton:hover{
+    background-color: rgba(0, 175, 0, 0.664);
+    transition: 0.3s;
+    cursor: crosshair;
+}
+.TakeCardButton:active{
+    background-color:rgba(0, 255, 110, 0.137);
+    border: 0.6vw double rgb(18, 155, 0);
+    transition: 0.1s;
+    cursor: crosshair;
+}
+.TakeCardButton:disabled{
+    cursor: no-drop;
+}
+.card:hover{
+    cursor: default;
+}
+.TakeCardButton:disabled{
+    animation: none;
+    background-color: slategrey;
+}
+.cardghost{
+    color: rgb(165, 80, 0)
+}
+
+.takerBlock{
+    display: flex;
+    flex-direction: column;
+}
+.takerBlock > *{
+    margin: 20% 0px;
+}
+.roundCount{
+    font-family: 'Ceviche One', cursive;
+    font-size: 5vw;
+    text-align: center;
+    color: gold;
+}
+.winner{
+    border: 0.3vw ridge gold;
+    box-shadow: 0px, 0px, 3vw, gold;
+}
+
+@keyframes pulse-yellow {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 243, 82, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 30px rgba(255, 82, 82, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+    }
 }
 
 @media screen and (min-width: 1200px) {
