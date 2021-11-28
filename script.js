@@ -39,6 +39,27 @@ let
         {transform: "translate(0, 20vw)", opacity: 0},
         {transform: "translate(0, 10vw)", opacity: 1},
         {transform: "translate(0, 0vw)", opacity: 0}
+    ],
+    keyGhostReverse = [
+        {transform: "translate(0, 0vw)", opacity: 0, color: "red"},
+        {transform: "translate(0, -10vw)", opacity: 1},
+        {transform: "translate(0, -20vw)", opacity: 0, color: "red"}
+    ],
+    keyBlinkSuccess = [
+        {boxShadow: "none"},
+        {boxShadow: "0vw 0vw 2vw 2vw green"},
+        {boxShadow: "none"},
+        {boxShadow: "0vw 0vw 2vw 2vw green"},
+        {boxShadow: "none"},
+        {boxShadow: "0vw 0vw 2vw 2vw green"},
+    ],
+    keyBlinkJackpot = [
+        {boxShadow: "none"},
+        {boxShadow: "0vw 0vw 2vw 2vw red"},
+        {boxShadow: "none"},
+        {boxShadow: "0vw 0vw 2vw 2vw blue"},
+        {boxShadow: "none"},
+        {boxShadow: "0vw 0vw 2vw 2vw gold"},
     ]
     backButton = document.querySelector("#backButton");
     animationStep = 500;
@@ -70,32 +91,35 @@ function playerNameSizeChanger(){
       let playernameLabels = document.querySelectorAll(".playername-flexible");
       let fontSizeForLabels = 30/playername.length;
       playernameLabels.forEach(element=>{
-         element.style.fontSize = ((fontSizeForLabels > 7)? 7 : fontSizeForLabels) + 'vw';
+         element.style.fontSize = ((fontSizeForLabels > 5)? 5 : fontSizeForLabels) + 'vw';
       })
 }
 
 function nameCheck(){
     pointplayername.innerHTML = playername;
     cardplayername.innerHTML = playername;
+    SlotsPlayerName.innerHTML = playername;
 }
 
 MagicBallButton.addEventListener('click', (event)=>{
     nameCheck();
     document.querySelector("#Main").animate(keyHideUp, {
-    duration: 2 * animationStep
+        duration: 2 * animationStep
     })
     setTimeout(()=>{
         Main.style.display = 'none';
         MagicBall.style.display = 'flex';
         ballForm.style.display = 'none';
         MagicBall.animate(keyShowUp, {
-        duration: 2 * animationStep
-        })
-        setTimeout(()=>{ballForm.style.display = 'block'}, 1000);
-        backButton.style.display = 'flex';
-        backButton.animate(keyShowUp, {
             duration: 2 * animationStep
         })
+        setTimeout(()=>{
+            ballForm.style.display = 'block'
+            backButton.style.display = 'flex';
+            backButton.animate(keyShowUp, {
+                duration: 2 * animationStep
+            })
+        }, 2 * animationStep);
     }, 1.9 * animationStep);
     document.body.style.backgroundImage = "url('Gallery/gamingBackgroundYellow.jpg')";
 })
@@ -103,7 +127,7 @@ MagicBallButton.addEventListener('click', (event)=>{
 PointBattleButton.addEventListener('click', (event)=>{
     nameCheck();
     document.querySelector("#Main").animate(keyHideUp, {
-    duration: 2 * animationStep
+        duration: 2 * animationStep
     })
     setTimeout(()=>{
         Main.style.display = 'none';
@@ -111,13 +135,15 @@ PointBattleButton.addEventListener('click', (event)=>{
         PointBattle.style.display = 'flex';
         pointrules.style.display = 'none';
         PointBattle.animate(keyShowUp, {
-        duration: 2 * animationStep
-        })
-        setTimeout(()=>{pointrules.style.display = 'block'}, 2 * animationStep);
-        backButton.style.display = 'flex';
-        backButton.animate(keyShowUp, {
             duration: 2 * animationStep
         })
+        setTimeout(()=>{
+            pointrules.style.display = 'block'
+            backButton.style.display = 'flex';
+            backButton.animate(keyShowUp, {
+                duration: 2 * animationStep
+            })
+        }, 2 * animationStep);
     }, 1.9 * animationStep);
     document.body.style.backgroundImage = "url('Gallery/gamingBackgroundDarkGreen.jpg')";
 })
@@ -125,7 +151,7 @@ PointBattleButton.addEventListener('click', (event)=>{
 CardBattleButton.addEventListener('click', (event)=>{
     nameCheck();
     document.querySelector("#Main").animate(keyHideUp, {
-    duration: 2 * animationStep
+        duration: 2 * animationStep
     })
     setTimeout(()=>{
         Main.style.display = 'none';
@@ -133,15 +159,38 @@ CardBattleButton.addEventListener('click', (event)=>{
         CardBattle.style.display = 'flex';
         cardrules.style.display = 'none';
         CardBattle.animate(keyShowUp, {
-        duration: 2 * animationStep
-        })
-        setTimeout(()=>{cardrules.style.display = 'block'}, 2 * animationStep);
-        backButton.style.display = 'flex';
-        backButton.animate(keyShowUp, {
             duration: 2 * animationStep
         })
+        setTimeout(()=>{
+            cardrules.style.display = 'block'
+            backButton.style.display = 'flex';
+            backButton.animate(keyShowUp, {
+                duration: 2 * animationStep
+            });
+        }, 2 * animationStep);
     }, 1.9 * animationStep);
     document.body.style.backgroundImage = "url('Gallery/gamingBackgroundRed.jpg')";
+})
+
+SlotsGameButton.addEventListener('click', (event)=>{
+    nameCheck();
+    document.querySelector("#Main").animate(keyHideUp, {
+        duration: 2 * animationStep
+    })
+    setTimeout(()=>{
+        Main.style.display = 'none';
+        SlotsGame.style.display = 'flex';
+        SlotsGame.animate(keyShowUp, {
+            duration: 2 * animationStep
+        })
+        setTimeout(()=>{
+            backButton.style.display = 'flex';
+            backButton.animate(keyShowUp, {
+                duration: 2 * animationStep
+            })
+        }, 2 * animationStep);
+    }, 1.9 * animationStep);
+    document.body.style.backgroundImage = "url('Gallery/gamingBackgroundPurple.jpg')";
 })
 
 backButton.addEventListener('click', (event)=>{
@@ -154,6 +203,9 @@ backButton.addEventListener('click', (event)=>{
     CardBattle.animate(keyHideDown, {
         duration: 2 * animationStep
     })
+    SlotsGame.animate(keyHideDown, {
+        duration: 2 * animationStep
+    })
     backButton.animate(keyHideDown, {
         duration: 2 * animationStep
     })
@@ -162,6 +214,7 @@ backButton.addEventListener('click', (event)=>{
     PointBattle.style.display = 'none';
     backButton.style.display = 'none';
     CardBattle.style.display = 'none';
+    SlotsGame.style.display = 'none';
     Main.style.display = 'flex';
     Main.animate(keyShowDown, {
         duration: 2 * animationStep
@@ -469,4 +522,134 @@ function CardValue(card){
         case 'A' : return 11;
         default: return -1;
     }
+}
+
+///////////////////////SlotsGame
+
+let
+    itempics = ["Gallery/Slots/apple.png", "Gallery/Slots/bananas.png", "Gallery/Slots/cherry.png", "Gallery/Slots/grapes.png", "Gallery/Slots/orange.png", "Gallery/Slots/strawberry.png", "Gallery/Slots/7.png"],
+    picitems = [picitem1, picitem2, picitem3, picitem4, picitem5, picitem6, picitem7, picitem8, picitem9],
+    moneyValue = 1000,
+    prize = 0;
+
+slotsSpinButton.addEventListener('click', spin);
+addAttemptsButton.addEventListener('click', attemptMoney);
+
+function ClearItemMarks(){
+    picitems.forEach(element => {
+        element.style.boxShadow = 'none';
+    });
+}
+
+function spin(){
+    ClearItemMarks();
+    prize = 0;
+    slotsSpinButton.setAttribute("disabled", true); 
+    moneyValue-=100;
+    money.innerHTML = moneyValue+"$";
+    moneyghost.innerHTML = "-100$";
+    moneyghost.style.display = 'flex';
+    moneyghost.animate(keyGhostReverse, duration = 3 * animationStep);
+
+    setTimeout(()=>{
+        moneyghost.style.display = 'none';
+    }, 3*animationStep);
+
+    roll(0, 30);
+    roll(1, 45);
+    roll(2, 70);
+    
+    setTimeout(()=>{
+        checkForCombination(1, 4, 7, 2);
+        checkForCombination(2, 5, 8, 5);
+        checkForCombination(3, 6, 9, 2);
+        checkForCombination(1, 5, 9, 3);
+        checkForCombination(3, 5, 7, 3);
+    }, 8.3*animationStep);
+
+    setTimeout(()=>{
+        if (prize > 0){
+            setTimeout(()=>{
+                moneyValue+=prize;
+                moneyghost.innerHTML = "+" + prize + '$';
+                moneyghost.style.display = 'flex';
+                moneyghost.animate(keyGhost, duration = 3 * animationStep);
+                setTimeout(()=>{
+                    moneyghost.style.display = 'none';
+                    money.innerHTML = moneyValue+"$";
+                    slotsSpinButton.removeAttribute("disabled");
+                }, 3*animationStep);
+            }, 4*animationStep);
+        }
+        else if (moneyValue >= 100){
+            slotsSpinButton.removeAttribute("disabled");
+        }
+        else {
+            addAttemptsButton.removeAttribute("disabled");
+        }
+    }, 8.6*animationStep);
+}
+
+function checkForCombination(a, b, c, koeff){
+    i1 = picitems.at(a-1);
+    i2 = picitems.at(b-1);
+    i3 = picitems.at(c-1);
+    if (i1.src == i2.src && i2.src == i3.src){
+        i1.style.boxShadow = "0vw 0vw 2vw 1vw green";
+        console.log(i1 + " " + i1.src);
+        console.log(i1 + " " + itempics.at(6));
+        if (prize == 0) prize = 100;
+        if (String(i1.src).includes(itempics.at(6))){
+            prize *= 20 * koeff;
+            i1.animate(keyBlinkJackpot, 3*animationStep);
+            i1.style.boxShadow = "0vw 0vw 2vw 2vw gold";
+            i2.animate(keyBlinkJackpot, 3*animationStep);
+            i2.style.boxShadow = "0vw 0vw 2vw 2vw gold";
+            i3.animate(keyBlinkJackpot, 3*animationStep);
+            i3.style.boxShadow = "0vw 0vw 2vw 2vw gold";
+        }
+        else{
+            if (String(i1.src).includes(itempics.at(0))) prize *= 3 * koeff;
+            if (String(i1.src).includes(itempics.at(1))) prize *= 4 * koeff;
+            if (String(i1.src).includes(itempics.at(2))) prize *= 5 * koeff;
+            if (String(i1.src).includes(itempics.at(3))) prize *= 6 * koeff;
+            if (String(i1.src).includes(itempics.at(4))) prize *= 7 * koeff;
+            if (String(i1.src).includes(itempics.at(5))) prize *= 8 * koeff;
+            i1.animate(keyBlinkSuccess, 3*animationStep);
+            i1.style.boxShadow = "0vw 0vw 2vw 2vw green";
+            i2.animate(keyBlinkSuccess, 3*animationStep);
+            i2.style.boxShadow = "0vw 0vw 2vw 2vw green";
+            i3.animate(keyBlinkSuccess, 3*animationStep);
+            i3.style.boxShadow = "0vw 0vw 2vw 2vw green";
+        }
+    }
+}
+
+function roll(block, count){
+    let 
+        item1 = picitems.at(block*3+0),
+        item2 = picitems.at(block*3+1),
+        item3 = picitems.at(block*3+2);
+
+    let rolls = setInterval(() => {
+        item3.src = item2.src;
+        item2.src = item1.src;
+        item1.src = itempics.at(Math.floor(Math.random() * (itempics.length - 0)) + 0);
+        count--;
+        if (count <= 0 && !(item1.src == item2.src && item1.src == item3.src)) clearInterval(rolls);
+    }, 0.1*animationStep);
+}
+
+function attemptMoney(){
+    addAttemptsButton.setAttribute("disabled", true);
+    moneyValue+=300;
+    moneyghost.innerHTML = "+300$";
+    moneyghost.style.display = 'flex';
+    moneyghost.animate(keyGhost, duration = 3 * animationStep);
+
+    setTimeout(()=>{
+        moneyghost.style.display = 'none';
+        money.innerHTML = moneyValue+"$";
+        slotsSpinButton.removeAttribute("disabled");
+    }, 3*animationStep);
 }

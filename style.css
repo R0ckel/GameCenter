@@ -11,7 +11,7 @@ body{
     background: fixed url("Gallery\\gamingBackgroundBlue.jpg") center/cover;
 }
 
-.MagicBall, .PointBattle, .CardBattle{
+.MagicBall, .PointBattle, .CardBattle, .SlotsGame{
     display: none;
 }
 
@@ -36,22 +36,25 @@ body{
     border-radius: 3vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
     margin: 18vh 30vw;
     width: 40vw;
     height: 80vw;
     min-height: 60vh;
-    max-height: 70vh;
+    max-height: 75vh;
 }
-.info{
-    font-size: 1vw;
+
+.menuHR{
+    width: 90%;
+    height: 5px;
+    margin: 1vw auto;
 }
 
 .menutext{
     font-family: 'Ceviche One', cursive;
     font-size: 5vw;
     margin: 3vh auto .5vh;
-    width: 100%;
+    width: 90%;
     color: white;
     text-align: center;
 }
@@ -66,8 +69,7 @@ body{
     font-family: 'Ceviche One', cursive;
     font-size: 3.5vw;
     width: 80%;
-    margin: 2vh;
-    height: 5vw;
+    height: 12vh;
     border-radius: 100%;
     color: whitesmoke;
     border-top: 0px;
@@ -102,11 +104,17 @@ body{
 .CBbutton:hover{
     box-shadow: 0px 0px 50px #ff00008f;
 }
+.SGbutton{
+    background: linear-gradient(#ffffff00, #b700ffe0);
+}
+.SGbutton:hover{
+    box-shadow: 0px 0px 50px #f700ff;
+}
 
 .copyright{
     position: absolute;
     font-size: 1.4vw;
-    bottom: 2%;
+    bottom: -5%;
     /*margin: 100% auto;*/
     width: 100%;
     color: rgb(255, 170, 43);
@@ -344,6 +352,10 @@ body{
     background: rgba(0, 217, 255, 0.301);
     transition: 1s;
 }
+.purple{
+    background: rgba(153, 0, 255, 0.301);
+    transition: 1s;
+}
 
 .pointed{
     cursor: pointer;
@@ -472,6 +484,125 @@ body{
     }
 }
 
+
+.slotsgamefield{
+    height: 90vh;
+    top: 4vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.slotsgamefield *{
+    font-family: 'Ceviche One', cursive;
+}
+
+.description{
+    font-size: 2vw;
+    color:white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+.description img{
+    width: 2vw;
+    height: 2vw;
+}
+.attemptionButtonBlock{
+    height: 10vw;
+}
+.attempts{
+    width: 18vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.addAttemptsButton{
+    height: 10vh;
+    font-size: 3vw;
+    padding: 0vw;
+}
+
+.slots{
+    width: 50vw;
+    max-width: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slotsBlockRealistic{
+    border: 2vw ridge rgb(128, 128, 128);
+    border-radius: 5vw;
+    box-shadow: 0 0 2vw 1vw rgb(119, 119, 119);
+    margin: 2vw auto;
+    width: 50vw;
+    height: 50vw;
+    max-width: 80vh;
+    max-height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+.itemVBlock{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.slots img{
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    border-radius: 1vw;
+}
+.slots .item{
+    margin: auto;
+    width: 90%;
+    height: 30%;
+    border: 0.5vw ridge silver;
+    border-radius: 2vw;
+    transition: 1s;
+}
+
+.tryblock{
+    width: 18vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.tryblock > *{
+    color:white;
+    font-size: 5.5vw;
+    margin: 5vw auto;
+    text-align: center;
+}
+.moneyGhostBlock{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.moneyghost{
+    color:rgb(72, 255, 72);
+}
+.Balance{
+    height: 15vh;
+}
+.money{
+    height: 5vh;
+    color:rgba(0, 255, 0, 0.705);
+}
+.slotsSpinButton{
+    height: 5vw;
+    padding: 0;
+}
+.slotsSpinBlock{
+    height: 5vw;
+}
+.SlotsPlayerName{
+    color: cyan;
+}
+
 @media screen and (min-width: 1200px) {
     .button {
       font-size: 2.5vh;
@@ -496,7 +627,11 @@ body{
         margin: 18vh 5vw;
     }
     .menu button{
-        height: 10vw;
+        height: 10vh;
+        font-size: 10vw;
+    }
+    .copyright{
+        font-size: 3vw;
     }
     .rules{
         font-size: 3vw;
@@ -521,15 +656,152 @@ body{
     }
     .menu{
         width: 90vw;
+        height: 80vh;
         margin: 18vh 5vw;
     }
     .menu button{
-        height: 10vw;
+        height: 10vh;
+        font-size: 10vw;
+    }
+    .copyright{
+        font-size: 3vw;
     }
     .rules{
         font-size: 3vw;
     }
     .card{
         width: 30%;
+    }
+    .slotsgamefield{
+        flex-direction: column;
+    }
+    .slotsgamefield > *{
+        width: 95%;
+        margin: 1vh auto;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .slotsgamefield{
+        flex-direction: column;
+    }
+    .slotsgamefield > *{
+        width: 95%;
+        margin: 1vh auto;
+    }
+    .addAttemptsButton{
+        height: 10vh;
+        width: 100%;
+        font-size: 7vw;
+    }
+    .attempts{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .attempts > *{
+        width: 40%;
+    }
+    .description{
+        font-size: 2.5vw;
+    }
+    .slots{
+        width: 87vw;
+        max-width: 80vh;
+    }
+    .slotsBlockRealistic{
+        width: 85vw;
+        height: 85vw;
+        max-width: 30vh;
+        max-height: 30vh;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .attemptionButtonBlock{
+        margin: 0;
+    }
+    .Balance{
+        margin: auto;
+        height: auto;
+        font-size: 6vw;
+    }
+    .tryblock{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .tryblock > *{
+        width: 90%;
+    }
+    .slotsSpinButton{
+        width: 80vw;
+        height: 12vh;
+        font-size: 15vw;
+    }
+    .slotsSpinBlock{
+        height: auto;
+    }
+}
+@media screen and (max-device-width:500px) {
+    .slotsgamefield{
+        flex-direction: column;
+    }
+    .slotsgamefield > *{
+        width: 95%;
+        margin: 1vh auto;
+    }
+    .addAttemptsButton{
+        height: 10vh;
+        width: 100%;
+        font-size: 7vw;
+    }
+    .attempts{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .attempts > *{
+        width: 40%;
+    }
+    .description{
+        font-size: 2.5vw;
+    }
+    .slots{
+        width: 87vw;
+        max-width: 80vh;
+    }
+    .slotsBlockRealistic{
+        width: 85vw;
+        height: 85vw;
+        max-width: 30vh;
+        max-height: 30vh;
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .attemptionButtonBlock{
+        margin: 0;
+    }
+    .Balance{
+        margin: auto;
+        height: auto;
+        font-size: 6vw;
+    }
+    .tryblock{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .tryblock > *{
+        width: 90%;
+    }
+    .slotsSpinButton{
+        width: 80vw;
+        height: 12vh;
+        font-size: 15vw;
+    }
+    .slotsSpinBlock{
+        height: auto;
     }
 }

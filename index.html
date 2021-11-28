@@ -15,6 +15,7 @@
             <div class="greeting">Welcome to Rockel`s Game Center</div>
             <div class="menu">
                 <span class = "menutext">Choose the game!</span>
+                <span class="menuHR"><hr></span>
                 <div class="buttonBlock"><button class = "MBbutton" id = "MagicBallButton">
                     Magic Ball
                 </button></div>
@@ -24,10 +25,9 @@
                 <div class="buttonBlock"><button class = "CBbutton" id = "CardBattleButton">
                     Card Battle
                 </button></div>
-                <div class="buttonBlock"><button disabled id = "disabledButton">
-                    Survivor
+                <div class="buttonBlock"><button class = "SGbutton" id = "SlotsGameButton">
+                    Slots Game
                 </button></div>
-                <span class = "info">(Work in progress)</span>
                 <span class = "copyright">© Made by Roman Koshovyi. All right reserved.</span>
             </div>
         </div>
@@ -116,6 +116,87 @@
                         </button></div>
                     </div>
                     <input id = "card2" type="image" class = "card realistic-sized-card" src="Gallery\Cards\cardback.png" alt="Кнопка «input»">
+                </div>
+            </div>
+        </div>
+        <!-- SlotsGame -->
+        <div class="SlotsGame" id = "SlotsGame">
+            <div class="gamefield slotsgamefield purple">
+                <div class="attempts">
+                    <div class="description">
+                        <div>Base: 100$</div>
+                        <div><img src = Gallery\\Slots\\apple.png alt="apple"> - x3</div>
+                        <div><img src = Gallery\\Slots\\bananas.png alt="bananas"> - x4</div>
+                        <div><img src = Gallery\\Slots\\cherry.png alt="cherry"> - x5</div>
+                        <div><img src = Gallery\\Slots\\grapes.png alt="grapes"> - x6</div>
+                        <div><img src = Gallery\\Slots\\orange.png alt="orange"> - x7</div>
+                        <div><img src = Gallery\\Slots\\strawberry.png alt="strawberry"> - x8</div>
+                        <div><img src = Gallery\\Slots\\7.png alt="7"> - x20</div>
+                        <div></div>
+                        <div>Central line - x5</div>
+                        <div>Top/bottom line - x2</div>
+                        <div>Diagonal line - x3</div>
+                    </div>
+                    <div class="TakeCardbuttonBlock attemptionButtonBlock"><button class = "TakeCardButton addAttemptsButton" id = "addAttemptsButton" disabled>
+                    Ask money
+                    </button></div>
+                </div>
+
+                <div class="slots">
+                    <div class="slotsBlockRealistic">
+                        <div class="itemVBlock" id = "itemVBlock1">
+                            <div class="item" id = "item1">
+                                <img src = Gallery\\Slots\\apple.png alt="item1" id = "picitem1">
+                            </div>
+                            <div class="item" id = "item2">
+                                <img src = Gallery\\Slots\\7.png alt="item2" id = "picitem2">
+                            </div>
+                            <div class="item" id = "item3">
+                                <img src = Gallery\\Slots\\bananas.png alt="item3" id = "picitem3">
+                            </div>
+                        </div>
+                        <div class="itemVBlock" id = "itemVBlock2">
+                            <div class="item" id = "item4">
+                                <img src = Gallery\\Slots\\orange.png alt="item4" id = "picitem4">
+                            </div>
+                            <div class="item" id = "item5">
+                                <img src = Gallery\\Slots\\7.png alt="item5" id = "picitem5">
+                            </div>
+                            <div class="item" id = "item6">
+                                <img src = Gallery\\Slots\\grapes.png alt="item6" id = "picitem6">
+                            </div>
+                        </div>
+                        <div class="itemVBlock" id = "itemVBlock3">
+                            <div class="item" id = "item7">
+                                <img src = Gallery\\Slots\\cherry.png alt="item7" id = "picitem7">
+                            </div>
+                            <div class="item" id = "item8">
+                                <img src = Gallery\\Slots\\7.png alt="item8" id = "picitem8">
+                            </div>
+                            <div class="item" id = "item9">
+                                <img src = Gallery\\Slots\\strawberry.png alt="item9" id = "picitem9">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tryblock">
+                    <div class="SlotsPlayerName" id = "SlotsPlayerName">
+                        Player
+                    </div>
+                    <div class="Balance">
+                        Balance <br>
+                        <div class="moneyGhostBlock">
+                            <div class="ghost moneyghost" id = "moneyghost">+0$</div>
+                        </div>
+                        <span class="money" id="money">1000$</span>
+                        <hr>
+                    </div>
+                    <div class="TakeCardbuttonBlock slotsSpinBlock">
+                        <button class = "TakeCardButton slotsSpinButton" id = "slotsSpinButton">
+                            Spin
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
